@@ -1,0 +1,10 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <rect fill="#1a1a2e" id="svg_1" height="400" width="400" y="0" x="0"/>
+  <circle fill="#303050" cx="200" cy="150" r="60" id="svg_2"/>
+  <path fill="#303050" d="m100,350 c0,-80 40,-130 100,-130 c60,0 100,50 100,130 z" id="svg_3"/>
+  <text xml:space="preserve" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="24" id="svg_4" y="200" x="200" stroke-width="0" stroke="#000" fill="#7000ff">AI PROFILE</text>
+  <text xml:space="preserve" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="14" id="svg_5" y="230" x="200" stroke-width="0" stroke="#000" fill="#00ffff">Replace Image</text>
+ </g>
+</svg>
