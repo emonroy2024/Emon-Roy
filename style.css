@@ -528,7 +528,7 @@ h4 {
 /* Skills */
 .skills-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
@@ -546,6 +546,7 @@ h4 {
     font-size: 0.9rem;
     transition: var(--transition);
     cursor: default;
+    white-space: nowrap;
 }
 
 .skill-tags span:hover {
@@ -668,8 +669,146 @@ footer {
 
     .hamburger {
         display: flex;
+
     }
 
 
-
+    /* Education Cards */
+    .edu-card-header { flex-direction: column; }
+    .edu-meta { flex-direction: row; align-items: center; }
+    .edu-cgpa-block { text-align: left; }
+    .edu-cgpa-num { font-size: 1.3rem; }
+    .edu-card-body { flex-direction: column; gap: 20px; }
 }
+
+
+
+/* About me no color change on links */
+.info-badges .badge a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.info-badges .badge a:visited,
+.info-badges .badge a:hover,
+.info-badges .badge a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Experience Section Links */
+.link-icon {
+    color: #4da6ff;
+    text-decoration: none;
+    margin-left: 6px;
+}
+
+.link-icon:visited,
+.link-icon:hover,
+.link-icon:active {
+    color: #4da6ff;
+    text-decoration: none;
+}
+
+/* certificate icons */
+.brand-logo {
+  filter: invert(1); /* makes it white */
+  width: 40px;       /* adjust size as needed */
+  height: 40px;
+}
+
+
+/* ── Education Cards ── */
+.edu-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 900px;
+    margin: 40px auto 0;
+}
+.edu-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.edu-card:hover { transform: translateY(-4px); }
+.edu-masters:hover { border-color: rgba(0,255,255,0.3); box-shadow: 0 16px 40px rgba(0,255,255,0.08); }
+.edu-bachelors:hover { border-color: rgba(0,200,150,0.3); box-shadow: 0 16px 40px rgba(0,200,150,0.08); }
+.edu-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    border-radius: 20px 0 0 20px;
+}
+.edu-masters::before  { background: linear-gradient(180deg, var(--primary-color), var(--secondary-color)); }
+.edu-bachelors::before { background: linear-gradient(180deg, #00c896, #007aff); }
+.edu-card-header {
+    padding: 26px 30px 20px 40px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+.edu-icon-box {
+    width: 46px; height: 46px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0;
+    background: rgba(112,0,255,0.15);
+    border: 1px solid rgba(112,0,255,0.3);
+    color: var(--secondary-color);
+}
+.edu-icon-bachelors {
+    background: rgba(0,200,150,0.1);
+    border-color: rgba(0,200,150,0.3);
+    color: #00c896;
+}
+.edu-title-group { flex: 1; min-width: 180px; }
+.edu-degree {
+    font-size: 1.1rem; font-weight: 700;
+    color: #fff; line-height: 1.4;
+    margin-bottom: 6px;
+    font-family: var(--font-heading);
+}
+.edu-specialization {
+    display: block; font-size: 0.9rem; font-weight: 500;
+    color: rgba(242, 238, 238, 0.81); margin-top: 2px;
+}
+.edu-school-name {
+    font-size: 0.88rem; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; margin: 0;
+}
+.edu-school-name i { font-size: 0.78rem; flex-shrink: 0; }
+.edu-school-masters   { color: var(--secondary-color); }
+.edu-school-bachelors { color: #00c896; }
+.edu-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
+.edu-date-badge { font-size: 0.78rem; font-weight: 600; padding: 4px 13px; border-radius: 20px; white-space: nowrap; }
+.edu-badge-masters { background: rgba(0,255,255,0.08); border: 1px solid rgba(0,255,255,0.22); color: var(--secondary-color); }
+.edu-badge-bachelors { background: rgba(0,200,150,0.08); border: 1px solid rgba(0,200,150,0.25); color: #00c896; }
+.edu-cgpa-block { text-align: right; }
+.edu-cgpa-num { font-size: 1.6rem; font-weight: 700; color: #fff; display: block; line-height: 1.1; }
+.edu-cgpa-label { font-size: 0.72rem; color: #555; display: block; }
+.edu-card-divider { height: 1px; background: var(--glass-border); margin: 0 30px 0 40px; }
+.edu-card-body { padding: 20px 30px 26px 40px; display: flex; gap: 32px; flex-wrap: wrap; }
+.edu-section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #555; margin-bottom: 10px; }
+.edu-coursework { flex: 1; min-width: 220px; }
+.edu-course-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.edu-course-tags span {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--glass-border);
+    color: var(--text-color); font-size: 0.78rem;
+    padding: 4px 10px; border-radius: 6px; cursor: default;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.edu-course-tags span:hover { background: rgba(112,0,255,0.2); border-color: var(--secondary-color); color: #fff; }
+.edu-highlights-col { flex: 1; min-width: 170px; }
+.edu-pill-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
+.edu-pill-list li { font-size: 0.85rem; color: var(--text-color); padding-left: 18px; position: relative; }
+.edu-pill-masters li::before   { content: '▹'; position: absolute; left: 0; color: var(--secondary-color); font-size: 0.75rem; }
+.edu-pill-bachelors li::before { content: '▹'; position: absolute; left: 0; color: #00c896; font-size: 0.75rem; }
